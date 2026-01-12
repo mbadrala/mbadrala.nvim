@@ -4,7 +4,7 @@ if vim.g.neovide then
     vim.g.neovide_padding_top = 0
     vim.g.neovide_padding_left = 0
     vim.g.mapleader = " "
-    vim.o.guifont = "JetBrainsMono_Nerd_Font:h12"
+    vim.o.guifont = "Berkeley_Mono:h11"
     vim.api.nvim_set_current_dir("C:/Users/Munkhbadral")
 
 	vim.o.number = true
@@ -26,11 +26,12 @@ if vim.g.neovide then
 
     require("config.lazy")
 
-    vim.cmd.colorscheme("moonfly")
+    vim.cmd.colorscheme("b01")
 
     vim.g.loaded_perl_provider = 0
     vim.g.loaded_ruby_provider = 0
 
+    vim.keymap.set("n", "<leader>pv", "<cmd>Oil<CR>")
     vim.keymap.set("n", "<leader><leader>", ":noh<CR>")
     vim.keymap.set("n", "<C-d>", "<C-d>zz")
     vim.keymap.set("n", "<C-u>", "<C-u>zz")
