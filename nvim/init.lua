@@ -1,9 +1,11 @@
 if vim.g.neovide then
+    vim.g.neovide_cursor_animation_length = 0.05
+    vim.g.neovide_cursor_trail_size = 0.7
+    vim.g.neovide_padding_top = 0
+    vim.g.neovide_padding_left = 0
     vim.g.mapleader = " "
-
-    require("config.lazy")
-
-    vim.cmd.colorscheme("habamax")
+    vim.o.guifont = "JetBrainsMono_Nerd_Font:h12"
+    vim.api.nvim_set_current_dir("C:/Users/Munkhbadral")
 
 	vim.o.number = true
 	vim.o.relativenumber = true
@@ -13,7 +15,6 @@ if vim.g.neovide then
 	vim.o.expandtab = true
 	vim.o.smartindent = true
 	vim.o.clipboard = "unnamedplus"
-    vim.o.guifont = "JetBrainsMono_Nerd_Font:h12"
     vim.o.hlsearch = true
     vim.o.incsearch = true
     vim.o.wrap = true
@@ -23,12 +24,14 @@ if vim.g.neovide then
     vim.o.foldenable = true
     vim.o.scrolloff = 6
 
+    require("config.lazy")
+
+    vim.cmd.colorscheme("moonfly")
+
     vim.g.loaded_perl_provider = 0
     vim.g.loaded_ruby_provider = 0
 
-    vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
     vim.keymap.set("n", "<leader><leader>", ":noh<CR>")
-    vim.keymap.set("n", "<leader>p", "<cmd>PasteImage<cr>")
     vim.keymap.set("n", "<C-d>", "<C-d>zz")
     vim.keymap.set("n", "<C-u>", "<C-u>zz")
     vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
