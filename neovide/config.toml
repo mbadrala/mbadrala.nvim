@@ -1,0 +1,5 @@
+chdir = "C:/Users/Munkhbadral"
+
+[font]
+normal = [] # Will use the bundled Fira Code Nerd Font by default
+size = 9.0
