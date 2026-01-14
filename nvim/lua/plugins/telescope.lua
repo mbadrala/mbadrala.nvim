@@ -10,6 +10,29 @@ return {
         },
     },
     config = function()
+        local telescope = require('telescope')
+        telescope.setup {
+            defaults = {
+                file_ignore_patterns = {
+                    "%.meta",
+                    "%.prefab",
+                    "%.dll",
+                    "%.mat"
+                },
+                path_display = { "truncate" },
+                git_status = false
+            },
+            pickers = {
+                git_files = {
+                    case_mode = "ignore_case",
+                    show_untracked = true,
+                },
+                find_files = {
+                    hidden = true,
+                }
+            },
+        }
+
         local builtin = require('telescope.builtin')
 
         vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
