@@ -10,7 +10,7 @@ if vim.g.neovide then
     vim.g.neovide_refresh_rate = 60
     vim.g.mapleader = " "
     vim.o.guifont = "Berkeley_Mono:h11"
-    vim.cmd.colorscheme("b01")
+    vim.cmd.colorscheme("high_k")
 
 	vim.o.number = true
 	vim.o.relativenumber = true
