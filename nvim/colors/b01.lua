@@ -58,7 +58,7 @@ hl("@comment",     { fg = colors.gray })
 
 hl("StatusLine",   { fg = colors.yellow, bg = colors.blue, bold = false }) 
 hl("StatusLineNC", { fg = colors.gray,   bg = colors.black }) 
-hl("ModeMsg",      { fg = colors.yellow, bg = none }) 
+hl("ModeMsg",      { fg = colors.yellow }) 
 hl("ErrorMsg",     { fg = colors.fl_red })
 hl("MoreMsg",       { fg = colors.fl_blue })
 hl("Question",      { fg = colors.fl_blue })

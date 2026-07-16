@@ -8,21 +8,22 @@ if vim.g.neovide then
     vim.g.neovide_opacity = 1.0
     vim.g.neovide_normal_opacity = 1.0
     vim.g.neovide_refresh_rate = 60
+    vim.g.neovide_no_idle = true
     vim.g.mapleader = " "
-    vim.o.guifont = "Berkeley_Mono:h11"
+    vim.o.guifont = "Berkeley_Mono:h12"
     vim.cmd.colorscheme("high_k")
 
-	vim.o.number = true
-	vim.o.relativenumber = true
-	vim.o.tabstop = 4
-	vim.o.softtabstop = 4
-	vim.o.shiftwidth = 4
-	vim.o.expandtab = true
-	vim.o.smartindent = true
-	vim.o.clipboard = "unnamedplus"
+    vim.o.number = true
+    vim.o.relativenumber = true
+    vim.o.tabstop = 4
+    vim.o.softtabstop = 4
+    vim.o.shiftwidth = 4
+    vim.o.expandtab = true
+    vim.o.smartindent = true
+    vim.o.clipboard = "unnamedplus"
     vim.o.hlsearch = true
     vim.o.incsearch = true
-    vim.o.wrap = true
+    vim.o.wrap = false
     vim.o.linebreak = true
     vim.o.title = true
     vim.o.titlestring = [[%{fnamemodify(getcwd(), ':t')} - nvim]]
@@ -47,14 +48,15 @@ if vim.g.neovide then
         callback = function(args)
             local opts = { buffer = args.buf }
             local telescope = require('telescope.builtin')
-            vim.keymap.set('n', '<leader>gr', telescope.lsp_references, { buffer = args.buf, desc = "Telescope: [G]oto [R]eferences" })
-            vim.keymap.set('n', '<leader>gf', telescope.lsp_document_symbols, { buffer = args.buf, desc = "Telescope: [G]oto [F]ile Symbols" })
-            vim.keymap.set('n', '<leader>gw', telescope.lsp_dynamic_workspace_symbols, { buffer = args.buf, desc = "Telescope: [G]oto [W]orkspace Symbols" })
 
             vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
             vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-            vim.keymap.set('n', 'K',  vim.lsp.buf.hover, opts)
+            vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
             vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
+
+            vim.keymap.set('n', '<leader>gr', telescope.lsp_references, opts)
+            vim.keymap.set('n', '<leader>gf', telescope.lsp_document_symbols, opts)
+            vim.keymap.set('n', '<leader>gw', telescope.lsp_dynamic_workspace_symbols, opts)
         end,
     })
 end

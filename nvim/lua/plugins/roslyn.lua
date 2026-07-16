@@ -11,7 +11,7 @@ return {
                 end,
                 settings = {
                     ["csharp|background_analysis"] = {
-                        dotnet_compiler_diagnostics_scope = "fullSolution",
+                        dotnet_compiler_diagnostics_scope = "openDocuments",
                     },
                 },
             },
