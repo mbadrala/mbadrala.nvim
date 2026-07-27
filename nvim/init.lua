@@ -44,6 +44,8 @@ if vim.g.neovide then
 
     require("mason").setup()
 
+    vim.lsp.enable({ "ts_ls", "gopls", "astro" })
+
     vim.api.nvim_create_autocmd('LspAttach', {
         callback = function(args)
             local opts = { buffer = args.buf }
